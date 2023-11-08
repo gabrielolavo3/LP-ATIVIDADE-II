@@ -1,5 +1,5 @@
 /* 
-Descrição  : solicite do usuário dois números inteiros e imprimir qual 
+Descrição  : Solicite do usuário dois números inteiros e imprimir qual 
 destes números é o maior e qual é o menor! (função)
 Professor  : Carlos Anderson Santos de Jesus 
 Autor(a)   : Gabriel S. Olavo
