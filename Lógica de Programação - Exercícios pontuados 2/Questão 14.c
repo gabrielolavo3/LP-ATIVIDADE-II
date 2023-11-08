@@ -14,8 +14,8 @@ int main ( ) {
 
 // Declaração de variáveis
 
-    int a = 0, numeros, par = 0, impar = 0, somaPar = 0, somaImpar = 0;
-    float mediaPar = 0, mediaImpar = 0; 
+    int a = 0, numeros, par = 0, impar = 0;
+    float mediaPar = 0, mediaImpar = 0, somaPar = 0, somaImpar = 0;
 
 // Solicitando dados
 
@@ -43,8 +43,8 @@ do {
 
 // Calculando as médias
 
-    mediaPar = somaPar / par;
-    mediaImpar = somaImpar / impar;
+    mediaPar = somaPar / (float) par;
+    mediaImpar = somaImpar / (float) impar;
 
 // Tela de resultado
 
