@@ -12,7 +12,7 @@ Data atual : 07/11/2023 */
 int main ( ) {
     setlocale (LC_ALL, "portuguese");
 
-// Declaraç?o de variáveis
+// Declaração de variáveis
 
     float compra, novoValor = 0;
     int diaDecompra;
