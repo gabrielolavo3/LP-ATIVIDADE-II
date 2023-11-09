@@ -1,6 +1,6 @@
 /* 
-DescriÁ„o  : Criar um menu de jogo para o usu·rio escolher a funÁ„o que quer e
-executar, usando Switch Case. N menu exibir: 1 - Novo jogo, 2 - Carregar jogo, 3 - ConfiguraÁıes! (funÁ„o)
+Descri√ß√£o  : Criar um menu de jogo para o usu√°rio escolher a fun√ß√£o que quer e
+executar, usando Switch Case. N menu exibir: 1 - Novo jogo, 2 - Carregar jogo, 3 - Configura√ß√µes! (fun√ß√£o)
 Professor  : Carlos Anderson Santos de Jesus 
 Autor(a)   : Gabriel S. Olavo
 Data atual : 07/11/2023 */
@@ -13,30 +13,33 @@ Data atual : 07/11/2023 */
 int main ( ) {
     setlocale (LC_ALL, "portuguese");
 
-// DeclaraÁ„o de vari·veis
+// Declara√ß√£o de vari√°veis
 
     float numero;
-    int menu;
+    int menu, placar_Definido = 16, placar_Novo = 0;
 
 // Solicitando dados
 
 do {
     printf ("VODEX YELLOW & GREEN! Jogue e adivinhe\n\n");
-    printf ("Selecione a aÁ„o que deseja\n\n");
-    printf ("CÛdigo | DescriÁ„o das FunÁıes\n");
+    printf ("Selecione a a√ß√£o que deseja\n\n");
+    printf ("C√≥digo | Descri√ß√£o das Fun√ß√µes\n");
     printf ("   1   | New Game\n");
     printf ("   2   | Load Game\n");
     printf ("   3   | Settings\n\n");
-    printf ("Pressione o bot„o correspondente: ");
+    printf ("Pressione o bot√£o correspondente: ");
     scanf ("%d", &menu);
 
 switch (menu) {
+
+// Terminal de New Game
+
 case 1:
     system ("cls || clear");
     printf ("VODEX YELLOW & GREEN! Jogue e adivinhe\n\n");
     printf ("NEW GAME SELECIONADO!\nAguarde, carregando a nova Gameplay\n\n");
     sleep (3);
-    printf ("Welcome to the Jungle! Jogue e acerte um dos n˙mero\n\n");
+    printf ("Welcome to the Jungle! Jogue e acerte UM dos n√∫mero\n\n");
 
 do {
     printf ("Digite um valor: ");
@@ -52,33 +55,74 @@ do {
         printf ("Indo pelo caminho certo! Tente um valor maior\n\n");
  
     } else if (numero >= 10 && numero <= 14) {
-        printf ("Quase l·! Tente um valor um pouco maior\n\n");} 
+        printf ("Quase l√°! Tente um valor um pouco maior\n\n"); 
     
-    if (numero >= 15 && numero <= 20) {
-        printf ("ParabÈns! VocÍ acertou o valor\n"); }
+    } else if (numero >= 15 && numero <= 20) {
+        printf ("Parab√©ns! Voc√™ acertou o valor\n\n");
+        placar_Novo++;
+        printf ("PONTUA√á√ÉO FINAL - Total de acertos: %d", placar_Novo);
+    
+    } else {
+        printf ("Valor ultrapassado! Diminua um pouco\n\n"); }
 
-} while (numero != 15);
+} while (numero < 15 || numero > 20);
     break;
+
+// Terminal de Load Game
 
 case 2:
     system ("cls || clear");
     printf ("VODEX YELLOW & GREEN! Jogue e adivinhe\n\n");
-    printf ("LOAD GAME SELECIONADO!\nAguarde, carregando ponto de salvamento");
+    printf ("LOAD GAME SELECIONADO!\nAguarde, carregando ponto de salvamento\n\n");
+    sleep (3);
+    printf ("Nightmare time! Jogue e acerte UM dos n√∫mero\n");
+    printf ("PONTUA√á√ÉO ATUAL - Total de acertos: %d\n\n", placar_Definido);
+
+do {
+    printf ("Digite um valor: ");
+    scanf ("%f", &numero);
+
+    if (numero <= 0) {
+        printf ("Longe! Tente um valor maior\n\n");
+       
+    } else if (numero >= 1 && numero <= 5) {
+        printf ("Insuficiente! Tente um valor maior\n\n");
+
+    } else if (numero >= 6 && numero <= 9) {
+        printf ("Indo pelo caminho certo! Tente um valor maior\n\n");
+ 
+    } else if (numero >= 10 && numero <= 14) {
+        printf ("Quase l√°! Tente um valor um pouco maior\n\n"); 
+    
+    } else if (numero >= 15 && numero <= 20) {
+        printf ("Continue assim! Tente outro valor\n\n");
+
+    } else if (numero >= 21 && numero <= 26) {
+        printf ("Parab√©ns! Voc√™ acertou o valor\n\n");
+        placar_Definido++;
+        printf ("PONTUA√á√ÉO FINAL - Novo total de acertos: %d", placar_Definido);  
+    
+    } else {
+        printf ("Valor ultrapassado! Diminua um pouco\n\n"); }
+    
+} while (numero < 21 || numero > 26);
     break;
+
+// Terminal de Settings
 
 case 3:
     system ("cls || clear");
     printf ("VODEX YELLOW & GREEN! Jogue e adivinhe\n\n");
     printf ("SETTINGS SELECIONADO!\n\n");
     printf ("   Y   | Controles do Joystick\n");
-    printf ("   A   | ¡udio\n");
+    printf ("   A   | √Åudio\n");
     printf ("   X   | Brilho e Contraste\n");
     printf ("   B   | Dificuldade de Gameplay\n\n");
 break;
 
 default:
     system ("cls || clear");
-    printf ("\nERRO! ERRO! SeleÁ„o incorreta.\n\n");
+    printf ("ERRO! ERRO! Sele√ß√£o incorreta.\n\n");
     break; }
 
 } while (menu < 1 || menu > 3);
